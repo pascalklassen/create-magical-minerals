@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "magical_minerals:block/lazulite_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "magical_minerals:block/lazulite_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "magical_minerals:block/lazulite_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "magical_minerals:block/lazulite_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "magical_minerals:block/lazulite_cluster"
+    },
+    "facing=west": {
+      "model": "magical_minerals:block/lazulite_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}
