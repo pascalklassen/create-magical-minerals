@@ -1,11 +1,12 @@
 package de.dummtrottel.magical_minerals;
 
-import de.dummtrottel.magical_minerals.common.block.AllBlocks;
-import de.dummtrottel.magical_minerals.common.item.AllItems;
+import de.dummtrottel.magical_minerals.common.AllBlocks;
+import de.dummtrottel.magical_minerals.common.AllItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -16,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 @Mod(MagicalMinerals.ID)
-public class MagicalMinerals
+public final class MagicalMinerals
 {
     public static final String ID = "magical_minerals";
     public static final String NAME = "Create: Magical Minerals";
@@ -28,7 +29,7 @@ public class MagicalMinerals
     {
         @Override
         public @NotNull ItemStack makeIcon() {
-            return new ItemStack(AllItems.LAZULITE_SHARD.get());
+            return new ItemStack(AllItems.LAZULITE_CLUSTER.get());
         }
     };
 
@@ -39,13 +40,8 @@ public class MagicalMinerals
         AllBlocks.register(bus);
         AllItems.register(bus);
 
-        bus.addListener(this::clientSetup);
+        bus.addListener(Client::setup);
         bus.addListener(EventPriority.LOWEST, this::gather);
-    }
-
-    private void clientSetup(FMLClientSetupEvent event)
-    {
-        ItemBlockRenderTypes.setRenderLayer(AllBlocks.LAZULITE_CLUSTER.get(), RenderType.cutout());
     }
 
     private void gather(GatherDataEvent event)
@@ -53,6 +49,20 @@ public class MagicalMinerals
         var generator = event.getGenerator();
         var fileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(AllItems.provider(generator, fileHelper));
+        generator.addProvider(AllBlocks.models(generator, fileHelper));
+        generator.addProvider(AllBlocks.states(generator, fileHelper));
+        generator.addProvider(AllItems.models(generator, fileHelper));
+    }
+
+    @Mod.EventBusSubscriber(Dist.CLIENT)
+    public static final class Client
+    {
+        private static void setup(FMLClientSetupEvent event)
+        {
+            ItemBlockRenderTypes.setRenderLayer(AllBlocks.LAZULITE_CLUSTER.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(AllBlocks.SMALL_LAZULITE_BUD.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(AllBlocks.MEDIUM_LAZULITE_BUD.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(AllBlocks.LARGE_LAZULITE_BUD.get(), RenderType.cutout());
+        }
     }
 }

@@ -1,0 +1,15 @@
+{
+  "parent": "magical_minerals:item/lazulite_bud",
+  "display": {
+    "fixed": {
+      "translation": [
+        0,
+        6,
+        0
+      ]
+    }
+  },
+  "textures": {
+    "layer0": "magical_minerals:block/medium_lazulite_bud"
+  }
+}
