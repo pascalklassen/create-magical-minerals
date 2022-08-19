@@ -14,8 +14,7 @@ public class LazuliteClusterBlock extends BaseClusterBlock
 
     public LazuliteClusterBlock()
     {
-        this(7, 3,
-                BlockBehaviour.Properties
+        this(7, 3, BlockBehaviour.Properties
                         .of(Material.AMETHYST)
                         .randomTicks()
                         .sound(SoundType.AMETHYST_CLUSTER)

@@ -26,6 +26,7 @@ public final class AllBlocks
     public static final RegistryObject<Block> SMALL_LAZULITE_BUD = BLOCKS.register("small_lazulite_bud", SmallLazuliteBudBlock::new);
     public static final RegistryObject<Block> MEDIUM_LAZULITE_BUD = BLOCKS.register("medium_lazulite_bud", MediumLazuliteBudBlock::new);
     public static final RegistryObject<Block> LARGE_LAZULITE_BUD = BLOCKS.register("large_lazulite_bud", LargeLazuliteBudBlock::new);
+    public static final RegistryObject<Block> BUDDING_LAZULITE = BLOCKS.register("budding_lazulite", LazuliteBlock::new);
 
     private static final class AllBlocksModelProvider extends BlockModelProvider
     {
@@ -38,6 +39,7 @@ public final class AllBlocks
         protected void registerModels()
         {
             cubeAll("lazulite_block", modLoc("block/" + LAZULITE_BLOCK.get().getRegistryName().getPath()));
+            cubeAll("budding_lazulite", modLoc("block/" + BUDDING_LAZULITE.get().getRegistryName().getPath()));
 
             cross("lazulite_cluster", modLoc("block/" + LAZULITE_CLUSTER.get().getRegistryName().getPath()));
             cross("small_lazulite_bud", modLoc("block/" + SMALL_LAZULITE_BUD.get().getRegistryName().getPath()));

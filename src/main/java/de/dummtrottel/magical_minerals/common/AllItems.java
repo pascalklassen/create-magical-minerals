@@ -24,6 +24,8 @@ public final class AllItems
     public static final RegistryObject<BlockItem> LAZULITE_BLOCK = ITEMS.register("lazulite_block",
             () -> new BlockItem(AllBlocks.LAZULITE_BLOCK.get(), new Item.Properties().tab(MagicalMinerals.MINERAL_TAB).rarity(Rarity.RARE)));
 
+    public static final RegistryObject<BlockItem> BUDDING_LAZULITE = ITEMS.register("budding_lazulite",
+            () -> new BlockItem(AllBlocks.BUDDING_LAZULITE.get(), new Item.Properties().tab(MagicalMinerals.MINERAL_TAB).rarity(Rarity.RARE)));
     public static final RegistryObject<BlockItem> LAZULITE_CLUSTER = ITEMS.register("lazulite_cluster",
             () -> new BlockItem(AllBlocks.LAZULITE_CLUSTER.get(), new Item.Properties().tab(MagicalMinerals.MINERAL_TAB).rarity(Rarity.RARE)));
 
@@ -50,6 +52,7 @@ public final class AllItems
         protected void registerModels()
         {
             blockItem(AllBlocks.LAZULITE_BLOCK.get(), modLoc("block/lazulite_block"));
+            blockItem(AllBlocks.BUDDING_LAZULITE.get(), modLoc("block/budding_lazulite"));
 
             cluster(
                     AllBlocks.LAZULITE_CLUSTER.get(),
