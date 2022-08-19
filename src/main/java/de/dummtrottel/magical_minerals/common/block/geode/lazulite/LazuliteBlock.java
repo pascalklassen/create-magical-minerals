@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
-public final class LazuliteBlock extends BaseGeodeBlock
+public class LazuliteBlock extends BaseGeodeBlock
 {
     public LazuliteBlock()
     {

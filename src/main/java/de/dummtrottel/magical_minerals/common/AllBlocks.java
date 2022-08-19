@@ -1,6 +1,7 @@
 package de.dummtrottel.magical_minerals.common;
 
 import de.dummtrottel.magical_minerals.MagicalMinerals;
+import de.dummtrottel.magical_minerals.common.block.geode.lazulite.BuddingLazuliteBlock;
 import de.dummtrottel.magical_minerals.common.block.geode.lazulite.cluster.LargeLazuliteBudBlock;
 import de.dummtrottel.magical_minerals.common.block.geode.lazulite.cluster.LazuliteClusterBlock;
 import de.dummtrottel.magical_minerals.common.block.geode.lazulite.LazuliteBlock;
@@ -26,7 +27,7 @@ public final class AllBlocks
     public static final RegistryObject<Block> SMALL_LAZULITE_BUD = BLOCKS.register("small_lazulite_bud", SmallLazuliteBudBlock::new);
     public static final RegistryObject<Block> MEDIUM_LAZULITE_BUD = BLOCKS.register("medium_lazulite_bud", MediumLazuliteBudBlock::new);
     public static final RegistryObject<Block> LARGE_LAZULITE_BUD = BLOCKS.register("large_lazulite_bud", LargeLazuliteBudBlock::new);
-    public static final RegistryObject<Block> BUDDING_LAZULITE = BLOCKS.register("budding_lazulite", LazuliteBlock::new);
+    public static final RegistryObject<Block> BUDDING_LAZULITE = BLOCKS.register("budding_lazulite", BuddingLazuliteBlock::new);
 
     private static final class AllBlocksModelProvider extends BlockModelProvider
     {
