@@ -48,8 +48,8 @@ public abstract class BaseBuddingBlock extends BaseGeodeBlock implements Budding
     public void randomTick(@NotNull BlockState state,
                            @NotNull ServerLevel level,
                            @NotNull BlockPos pos,
-                           Random random) {
-
+                           Random random)
+    {
         if (random.nextInt(getGrowthChance()) == 0)
         {
             var direction = DIRECTIONS[random.nextInt(DIRECTIONS.length)];
