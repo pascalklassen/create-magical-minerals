@@ -1,4 +1,4 @@
-# create-magical-minerals
+# Create: Magical Minerals
 Enhance your Create experience with magic infused minerals!
 
 ## Credits
