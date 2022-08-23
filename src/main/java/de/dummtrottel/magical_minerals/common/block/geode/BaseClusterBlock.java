@@ -37,9 +37,9 @@ public abstract class BaseClusterBlock extends BaseGeodeBlock
     private static final double BOX_GROUND = 0;
     private static final double BOX_HALF_BLOCK = 16;
 
-    public BaseClusterBlock(int size, int offset, BlockBehaviour.Properties properties)
+    public BaseClusterBlock(@NotNull String mineral, int size, int offset, BlockBehaviour.Properties properties)
     {
-        super(properties);
+        super(mineral, properties);
 
         registerDefaultState(
                 defaultBlockState()

@@ -25,7 +25,7 @@ public final class AllFeatures
                     new GeodeConfiguration(
                             new GeodeBlockSettings(
                                     /* filling layer */
-                                    BlockStateProvider.simple(Blocks.WATER),
+                                    BlockStateProvider.simple(Blocks.AIR),
                                     /* inner layer */
                                     BlockStateProvider.simple(AllBlocks.LAZULITE_BLOCK.get()),
                                     /* alternative inner layer */
@@ -48,7 +48,7 @@ public final class AllFeatures
                             /* potential placement chance */
                             0.35D,
                             /* alternative layer chance */
-                            0.083D,
+                            0.04D,
                             /* placements require layer0 alternate */
                             true,
                             /* outer wall distance */
@@ -71,6 +71,6 @@ public final class AllFeatures
             LAZULITE_GEODE,
             RarityFilter.onAverageOnceEvery(100),
             InSquarePlacement.spread(),
-            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-50), VerticalAnchor.absolute(-25)),
+            HeightRangePlacement.uniform(VerticalAnchor.aboveBottom(-45), VerticalAnchor.absolute(-25)),
             BiomeFilter.biome());
 }

@@ -10,6 +10,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
@@ -40,8 +41,13 @@ public final class MagicalMinerals
         AllBlocks.register(bus);
         AllItems.register(bus);
 
+        bus.addListener(this::setup);
         bus.addListener(Client::setup);
         bus.addListener(EventPriority.LOWEST, this::gather);
+    }
+
+    private void setup(FMLCommonSetupEvent event)
+    {
     }
 
     private void gather(GatherDataEvent event)

@@ -11,9 +11,12 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseGeodeBlock extends Block
 {
-    public BaseGeodeBlock(Properties properties)
+    private final @NotNull String mineral;
+
+    public BaseGeodeBlock(@NotNull String mineral, Properties properties)
     {
         super(properties);
+        this.mineral = mineral;
     }
 
     @SuppressWarnings("deprecation")
@@ -30,5 +33,10 @@ public abstract class BaseGeodeBlock extends Block
             level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_HIT, SoundSource.BLOCKS, 1.0F, 0.5F + level.getRandom().nextFloat() * 1.2F);
             level.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS, 1.0F, 0.5F + level.getRandom().nextFloat() * 1.2F);
         }
+    }
+
+    public @NotNull String getMineralName()
+    {
+        return mineral;
     }
 }

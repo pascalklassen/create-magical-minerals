@@ -2,7 +2,7 @@ package de.dummtrottel.magical_minerals.common.block.geode.lazulite;
 
 import de.dummtrottel.magical_minerals.common.AllBlocks;
 import de.dummtrottel.magical_minerals.common.block.geode.BaseBuddingBlock;
-import net.minecraft.world.level.block.Block;
+import de.dummtrottel.magical_minerals.common.block.geode.BaseClusterBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public final class BuddingLazuliteBlock extends BaseBuddingBlock
@@ -11,30 +11,33 @@ public final class BuddingLazuliteBlock extends BaseBuddingBlock
 
     public BuddingLazuliteBlock()
     {
-        super(BlockBehaviour.Properties
-                .copy(AllBlocks.LAZULITE_BLOCK.get()), GROWTH_CHANCE);
+        super(
+                LazuliteBlock.MINERAL_NAME,
+                BlockBehaviour.Properties
+                        .copy(AllBlocks.LAZULITE_BLOCK.get()), GROWTH_CHANCE
+        );
     }
 
     @Override
-    public Block full()
+    public BaseClusterBlock full()
     {
         return AllBlocks.LAZULITE_CLUSTER.get();
     }
 
     @Override
-    public Block large()
+    public BaseClusterBlock large()
     {
         return AllBlocks.LARGE_LAZULITE_BUD.get();
     }
 
     @Override
-    public Block medium()
+    public BaseClusterBlock medium()
     {
         return AllBlocks.MEDIUM_LAZULITE_BUD.get();
     }
 
     @Override
-    public Block small()
+    public BaseClusterBlock small()
     {
         return AllBlocks.SMALL_LAZULITE_BUD.get();
     }

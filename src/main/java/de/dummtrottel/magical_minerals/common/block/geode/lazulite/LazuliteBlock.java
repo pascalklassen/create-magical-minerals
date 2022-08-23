@@ -7,9 +7,12 @@ import net.minecraft.world.level.material.Material;
 
 public class LazuliteBlock extends BaseGeodeBlock
 {
+    public static final String MINERAL_NAME = "lazulite";
+
     public LazuliteBlock()
     {
         super(
+                MINERAL_NAME,
                 BlockBehaviour.Properties
                         .of(Material.AMETHYST)
                         .sound(SoundType.AMETHYST)
