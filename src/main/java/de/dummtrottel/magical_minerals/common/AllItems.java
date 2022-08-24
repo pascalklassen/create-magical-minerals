@@ -1,12 +1,9 @@
 package de.dummtrottel.magical_minerals.common;
 
 import de.dummtrottel.magical_minerals.MagicalMinerals;
-import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -37,26 +34,6 @@ public final class AllItems
             () -> new Item(new Item.Properties().tab(MagicalMinerals.MINERAL_TAB).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> LAZULITE_POWDER = ITEMS.register("lazulite_powder",
             () -> new Item(new Item.Properties().tab(MagicalMinerals.MINERAL_TAB).rarity(Rarity.RARE)));
-
-    private static final class AllItemModelProvider extends ItemModelProvider
-    {
-        public AllItemModelProvider(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper)
-        {
-            super(generator, modid, existingFileHelper);
-        }
-
-        @Override
-        protected void registerModels()
-        {
-            basicItem(LAZULITE_SHARD.get());
-            basicItem(LAZULITE_POWDER.get());
-        }
-    }
-
-    public static ItemModelProvider models(DataGenerator generator, ExistingFileHelper helper)
-    {
-        return new AllItemModelProvider(generator, MagicalMinerals.ID, helper);
-    }
 
     public static void register(IEventBus bus)
     {

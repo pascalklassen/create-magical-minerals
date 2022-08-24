@@ -1,10 +1,10 @@
 package de.dummtrottel.magical_minerals.common.block.geode.lazulite.cluster;
 
+import de.dummtrottel.magical_minerals.common.AllBlocks;
 import de.dummtrottel.magical_minerals.common.block.geode.BaseClusterBlock;
 import de.dummtrottel.magical_minerals.common.block.geode.MineralType;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 
 public class LazuliteClusterBlock extends BaseClusterBlock
 {
@@ -15,12 +15,10 @@ public class LazuliteClusterBlock extends BaseClusterBlock
 
     public LazuliteClusterBlock()
     {
-        this(7, 3, BlockBehaviour.Properties
-                        .of(Material.AMETHYST)
-                        .randomTicks()
+        this(7, 3,
+                BlockBehaviour.Properties
+                        .copy(AllBlocks.LAZULITE_BLOCK.get())
                         .sound(SoundType.AMETHYST_CLUSTER)
-                        .noOcclusion()
-                        .strength(1.5F)
                         .lightLevel((state) -> 5)
         );
     }

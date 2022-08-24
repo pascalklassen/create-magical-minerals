@@ -16,6 +16,8 @@ public class LazuliteBlock extends BaseGeodeBlock
                 MineralType.LAZULITE,
                 BlockBehaviour.Properties
                         .of(Material.AMETHYST)
+                        .strength(1.5F)
+                        .requiresCorrectToolForDrops()
                         .sound(SoundType.AMETHYST)
         );
     }

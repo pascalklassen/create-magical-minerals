@@ -16,7 +16,8 @@ public final class BuddingLazuliteBlock extends BaseBuddingBlock
         super(
                 MineralType.LAZULITE,
                 BlockBehaviour.Properties
-                        .copy(AllBlocks.LAZULITE_BLOCK.get()), GROWTH_CHANCE
+                        .copy(AllBlocks.LAZULITE_BLOCK.get()),
+                GROWTH_CHANCE
         );
     }
 

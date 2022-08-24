@@ -2,6 +2,9 @@ package de.dummtrottel.magical_minerals;
 
 import de.dummtrottel.magical_minerals.common.AllBlocks;
 import de.dummtrottel.magical_minerals.common.AllItems;
+import de.dummtrottel.magical_minerals.common.datagen.BlockModelGenerator;
+import de.dummtrottel.magical_minerals.common.datagen.BlockStateGenerator;
+import de.dummtrottel.magical_minerals.common.datagen.ItemModelGenerator;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.CreativeModeTab;
@@ -55,9 +58,9 @@ public final class MagicalMinerals
         var generator = event.getGenerator();
         var fileHelper = event.getExistingFileHelper();
 
-        generator.addProvider(AllBlocks.models(generator, fileHelper));
-        generator.addProvider(AllBlocks.statesAndModels(generator, fileHelper));
-        generator.addProvider(AllItems.models(generator, fileHelper));
+        generator.addProvider(BlockModelGenerator.create(generator, fileHelper));
+        generator.addProvider(BlockStateGenerator.create(generator, fileHelper));
+        generator.addProvider(ItemModelGenerator.create(generator, fileHelper));
     }
 
     @Mod.EventBusSubscriber(Dist.CLIENT)
