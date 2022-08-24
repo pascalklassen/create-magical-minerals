@@ -35,11 +35,11 @@ public abstract class BaseClusterBlock extends BaseGeodeBlock
     protected final VoxelShape boxDown;
     
     private static final double BOX_GROUND = 0;
-    private static final double BOX_HALF_BLOCK = 16;
+    private static final double BOX_FULL_BLOCK = 16;
 
-    public BaseClusterBlock(@NotNull String mineral, int size, int offset, BlockBehaviour.Properties properties)
+    public BaseClusterBlock(@NotNull MineralType type, int size, int offset, BlockBehaviour.Properties properties)
     {
-        super(mineral, properties);
+        super(type, properties);
 
         registerDefaultState(
                 defaultBlockState()
@@ -47,14 +47,14 @@ public abstract class BaseClusterBlock extends BaseGeodeBlock
                         .setValue(FACING, Direction.UP)
         );
 
-        boxUp = Block.box(offset, BOX_GROUND, offset, BOX_HALF_BLOCK - offset, size, BOX_HALF_BLOCK - offset);
-        boxDown = Block.box(offset, BOX_HALF_BLOCK - size, offset, BOX_HALF_BLOCK - offset, BOX_HALF_BLOCK, BOX_HALF_BLOCK - offset);
+        boxUp = Block.box(offset, BOX_GROUND, offset, BOX_FULL_BLOCK - offset, size, BOX_FULL_BLOCK - offset);
+        boxDown = Block.box(offset, BOX_FULL_BLOCK - size, offset, BOX_FULL_BLOCK - offset, BOX_FULL_BLOCK, BOX_FULL_BLOCK - offset);
 
-        boxNorth = Block.box(offset, offset, BOX_HALF_BLOCK - size, BOX_HALF_BLOCK - offset, BOX_HALF_BLOCK - offset, BOX_HALF_BLOCK);
-        boxSouth = Block.box(offset, offset, BOX_GROUND, BOX_HALF_BLOCK - offset, BOX_HALF_BLOCK - offset, size);
+        boxNorth = Block.box(offset, offset, BOX_FULL_BLOCK - size, BOX_FULL_BLOCK - offset, BOX_FULL_BLOCK - offset, BOX_FULL_BLOCK);
+        boxSouth = Block.box(offset, offset, BOX_GROUND, BOX_FULL_BLOCK - offset, BOX_FULL_BLOCK - offset, size);
 
-        boxEast = Block.box(BOX_GROUND, offset, offset, size, BOX_HALF_BLOCK - offset, BOX_HALF_BLOCK - offset);
-        boxWest = Block.box(BOX_HALF_BLOCK - size, offset, offset, BOX_HALF_BLOCK, BOX_HALF_BLOCK - offset, BOX_HALF_BLOCK - offset);
+        boxEast = Block.box(BOX_GROUND, offset, offset, size, BOX_FULL_BLOCK - offset, BOX_FULL_BLOCK - offset);
+        boxWest = Block.box(BOX_FULL_BLOCK - size, offset, offset, BOX_FULL_BLOCK, BOX_FULL_BLOCK - offset, BOX_FULL_BLOCK - offset);
     }
 
     @SuppressWarnings("deprecation")

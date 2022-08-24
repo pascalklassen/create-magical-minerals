@@ -1,7 +1,7 @@
 package de.dummtrottel.magical_minerals.common.block.geode.lazulite.cluster;
 
 import de.dummtrottel.magical_minerals.common.block.geode.BaseClusterBlock;
-import de.dummtrottel.magical_minerals.common.block.geode.lazulite.LazuliteBlock;
+import de.dummtrottel.magical_minerals.common.block.geode.MineralType;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -10,7 +10,7 @@ public class LazuliteClusterBlock extends BaseClusterBlock
 {
     protected LazuliteClusterBlock(int size, int offset, BlockBehaviour.Properties properties)
     {
-        super(LazuliteBlock.MINERAL_NAME, size, offset, properties);
+        super(MineralType.LAZULITE, size, offset, properties);
     }
 
     public LazuliteClusterBlock()

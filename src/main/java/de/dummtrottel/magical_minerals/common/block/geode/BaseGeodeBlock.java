@@ -11,12 +11,12 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseGeodeBlock extends Block
 {
-    private final @NotNull String mineral;
+    private final @NotNull MineralType type;
 
-    public BaseGeodeBlock(@NotNull String mineral, Properties properties)
+    public BaseGeodeBlock(@NotNull MineralType type, Properties properties)
     {
         super(properties);
-        this.mineral = mineral;
+        this.type = type;
     }
 
     @SuppressWarnings("deprecation")
@@ -35,8 +35,8 @@ public abstract class BaseGeodeBlock extends Block
         }
     }
 
-    public @NotNull String getMineralName()
+    public @NotNull MineralType getType()
     {
-        return mineral;
+        return type;
     }
 }

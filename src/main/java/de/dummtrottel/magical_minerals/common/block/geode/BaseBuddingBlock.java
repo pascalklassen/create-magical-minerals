@@ -20,9 +20,9 @@ public abstract class BaseBuddingBlock extends BaseGeodeBlock implements Budding
 
     protected final int growthChance;
 
-    public BaseBuddingBlock(@NotNull String mineral, BlockBehaviour.Properties properties, int growthChance)
+    public BaseBuddingBlock(@NotNull MineralType type, BlockBehaviour.Properties properties, int growthChance)
     {
-        super(mineral, properties.randomTicks());
+        super(type, properties.randomTicks());
         this.growthChance = growthChance;
     }
 

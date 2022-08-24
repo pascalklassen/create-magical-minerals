@@ -120,7 +120,7 @@ public final class AllBlocks
         private ItemModelBuilder bud(@NotNull BaseGeodeBlock block)
         {
             return itemModels()
-                    .withExistingParent("%s_bud".formatted(block.getMineralName()), mcLoc("item/generated"))
+                    .withExistingParent("%s_bud".formatted(block.getType().getId()), mcLoc("item/generated"))
                     .transforms()
                     .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND)
                     .rotation(0, -90, 25)
@@ -202,7 +202,7 @@ public final class AllBlocks
         return new AllBlocksModelProvider(generator, MagicalMinerals.ID, helper);
     }
 
-    public static BlockStateProvider states(DataGenerator generator, ExistingFileHelper helper)
+    public static BlockStateProvider statesAndModels(DataGenerator generator, ExistingFileHelper helper)
     {
         return new AllBlocksStateModelProvider(generator, MagicalMinerals.ID, helper);
     }

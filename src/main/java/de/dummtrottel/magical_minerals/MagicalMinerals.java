@@ -56,7 +56,7 @@ public final class MagicalMinerals
         var fileHelper = event.getExistingFileHelper();
 
         generator.addProvider(AllBlocks.models(generator, fileHelper));
-        generator.addProvider(AllBlocks.states(generator, fileHelper));
+        generator.addProvider(AllBlocks.statesAndModels(generator, fileHelper));
         generator.addProvider(AllItems.models(generator, fileHelper));
     }
 
