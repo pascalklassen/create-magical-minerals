@@ -136,7 +136,7 @@ public final class AllBlocks
                     .end().end();
         }
 
-        private void smallBud(Block block, ModelFile parent)
+        private void smallBud(@NotNull Block block, @NotNull ModelFile parent)
         {
             var name = block.getRegistryName();
             var path = name.getPath();
@@ -156,7 +156,7 @@ public final class AllBlocks
                     .end().end();
         }
 
-        private void mediumBud(Block block, ModelFile parent)
+        private void mediumBud(@NotNull Block block, @NotNull ModelFile parent)
         {
             var name = block.getRegistryName();
             var path = name.getPath();
@@ -172,7 +172,7 @@ public final class AllBlocks
                     .end().end();
         }
 
-        private void largeBud(Block block, ModelFile parent)
+        private void largeBud(@NotNull Block block, @NotNull ModelFile parent)
         {
             var name = block.getRegistryName();
             var path = name.getPath();
